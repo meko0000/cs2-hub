@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO Meta Tags -->
+    <title>CS2 Pro Config & Sensitivity Hub | eDPI Converter, Viewmodel, Crosshair & Autoexec Generator</title>
+    <meta name="description" content="Free CS2 Pro Config Hub: Convert mouse sensitivity & eDPI between CS2, Valorant, Apex, Fortnite & OW2. Generate pro viewmodels (donk, ZywOo, m0NESY), test live crosshairs, and download autoexec.cfg.">
+    <meta name="keywords" content="CS2 sensitivity converter, CS2 eDPI calculator, CS2 viewmodel generator, CS2 crosshair generator, CS2 autoexec generator, donk viewmodel, ZywOo crosshair, Valorant to CS2 sens">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="CS2 Pro Config Hub">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cs2prohub.example.com/">
+    <meta property="og:title" content="CS2 Pro Config & Sensitivity Hub — Free Pro Tools & Autoexec Builder">
+    <meta property="og:description" content="Convert sensitivity across FPS games, copy pro CS2 viewmodels, preview crosshairs live, and export a ready-to-use autoexec.cfg in seconds.">
+    <meta property="og:image" content="https://placehold.co/1200x630/0b0e14/f59e0b?text=CS2+Pro+Config+%26+Sensitivity+Hub">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CS2 Pro Config & Sensitivity Hub">
+    <meta name="twitter:description" content="All-in-one CS2 Sensitivity Converter, Pro Viewmodel Generator, Live Crosshair Builder & Autoexec.cfg Exporter.">
+
+    <!-- Structured Data (JSON-LD) for Google Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "CS2 Pro Config & Sensitivity Hub",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Free Counter-Strike 2 sensitivity converter, pro viewmodel generator, live crosshair previewer, and autoexec.cfg builder."
+    }
+    </script>
+
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        esports: {
+                            bg: '#0b0e14',
+                            card: '#131822',
+                            elevated: '#1a2130',
+                            border: '#252f42',
+                            amber: '#f59e0b',
+                            cyan: '#06b6d4'
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+
+    <!-- =====================================================================
+         MONETIZATION: GOOGLE ADSENSE GLOBAL HEAD SCRIPT
+         After your site is approved by Google AdSense, paste your AdSense
+         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+         right below this comment.
+         ===================================================================== -->
+
+    <style>
+        /* Custom Range Slider Styling for Esports Dark UI */
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            background: #252f42;
+            height: 6px;
+            border-radius: 9999px;
+            outline: none;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #f59e0b;
+            cursor: pointer;
+            border: 2px solid #0b0e14;
+            box-shadow: 0 0 10px rgba(245, 158, 11, 0.45);
+            transition: transform 0.15s ease;
+        }
+        input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.15);
+        }
+        input[type="range"]::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #f59e0b;
+            cursor: pointer;
+            border: 2px solid #0b0e14;
+        }
+        /* Subtle animated glow for active elements */
+        .amber-glow {
+            box-shadow: 0 0 24px -6px rgba(245, 158, 11, 0.35);
+        }
+        /* Custom scrollbar for code blocks */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0e14;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #252f42;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #374663;
+        }
+    </style>
+</head>
+<body class="bg-esports-bg text-slate-100 font-sans antialiased overflow-x-hidden min-h-screen flex flex-col">
+
+    <!-- Toast Notification Container (Replaces alert() cleanly) -->
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-esports-bg/90 backdrop-blur-md border-b border-esports-border">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-9 h-9 rounded-xl bg-amber-500/15 border border-amber-500/40 flex items-center justify-center group-hover:bg-amber-500/25 transition">
+                    <!-- Inline SVG Crosshair Logo -->
+                    <svg class="w-5 h-5 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+                        <circle cx="12" cy="12" r="7" class="opacity-40"></circle>
+                        <line x1="12" y1="2" x2="12" y2="7"></line>
+                        <line x1="12" y1="17" x2="12" y2="22"></line>
+                        <line x1="2" y1="12" x2="7" y2="12"></line>
+                        <line x1="17" y1="12" x2="22" y2="12"></line>
+                    </svg>
+                </div>
+                <div>
+                    <span class="font-extrabold tracking-tight text-base sm:text-lg text-white">CS2 PRO <span class="text-amber-500">HUB</span></span>
+                    <span class="hidden sm:block text-[11px] text-slate-400 -mt-1">Config &amp; Sensitivity Suite</span>
+                </div>
+            </a>
+
+            <nav class="flex items-center gap-2 sm:gap-5 text-sm font-medium">
+                <a href="#tools" class="text-slate-300 hover:text-amber-400 transition px-2 py-1">Tools</a>
+                <a href="#pro-gear" class="text-slate-300 hover:text-amber-400 transition px-2 py-1">Pro Gear</a>
+                <a href="#faq" class="text-slate-300 hover:text-amber-400 transition px-2 py-1">FAQ</a>
+                <button onclick="switchTab('autoexec')" class="hidden sm:inline-flex items-center gap-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold px-3.5 py-2 rounded-xl text-xs transition shadow-lg shadow-amber-500/20">
+                    Export Autoexec
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-8">
+
+        <!-- Hero Section -->
+        <section class="text-center max-w-3xl mx-auto space-y-3">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-semibold tracking-wide uppercase">
+                <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                Updated for Counter-Strike 2 (2026)
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                CS2 Pro Config &amp; <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">Sensitivity Hub</span>
+            </h1>
+            <p class="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
+                Convert your aim sensitivity across top FPS titles, dial in pro viewmodels, preview your exact crosshair live, and export a clean <code class="text-amber-400 font-mono text-xs sm:text-sm bg-esports-card px-1.5 py-0.5 rounded">autoexec.cfg</code> in one click.
+            </p>
+        </section>
+
+        <!-- =====================================================================
+             MONETIZATION SLOT 1: TOP LEADERBOARD AD (728x90 Desktop / Responsive Mobile)
+             Replace the inner placeholder div below with your Google AdSense <ins> unit.
+             ===================================================================== -->
+        <aside aria-label="Advertisement" class="w-full flex justify-center">
+            <div class="w-full max-w-[728px] min-h-[90px] rounded-2xl bg-esports-card/80 border border-dashed border-esports-border flex flex-col items-center justify-center p-3 text-center">
+                <span class="text-[10px] uppercase tracking-widest text-slate-500 font-semibold">Advertisement — Google AdSense Leaderboard (728×90)</span>
+                <span class="text-xs text-slate-600 mt-1">Paste your AdSense Display Ad unit code in the HTML comment block here</span>
+            </div>
+        </aside>
+
+        <!-- Interactive 4-Tool Dashboard -->
+        <section id="tools" class="space-y-5">
+            <!-- Tab Navigation -->
+            <div role="tablist" aria-label="CS2 Config Tools" class="grid grid-cols-2 lg:grid-cols-4 gap-2.5 bg-esports-card p-2 rounded-2xl border border-esports-border">
+                <button role="tab" id="tab-btn-sens" onclick="switchTab('sens')" class="tab-btn flex items-center justify-center gap-2 px-3 py-3 rounded-xl text-xs sm:text-sm font-semibold transition cursor-pointer">
+                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/><circle cx="12" cy="12" r="4"/></svg>
+                    <span>Sens &amp; eDPI</span>
+                </button>
+                <button role="tab" id="tab-btn-viewmodel" onclick="switchTab('viewmodel')" class="tab-btn flex items-center justify-center gap-2 px-3 py-3 rounded-xl text-xs sm:text-sm font-semibold transition cursor-pointer">
+                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg>
+                    <span>Viewmodel</span>
+                </button>
+                <button role="tab" id="tab-btn-crosshair" onclick="switchTab('crosshair')" class="tab-btn flex items-center justify-center gap-2 px-3 py-3 rounded-xl text-xs sm:text-sm font-semibold transition cursor-pointer">
+                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="3" x2="12" y2="9"/><line x1="12" y1="15" x2="12" y2="21"/><line x1="3" y1="12" x2="9" y2="12"/><line x1="15" y1="12" x2="21" y2="12"/></svg>
+                    <span>Crosshair Live</span>
+                </button>
+                <button role="tab" id="tab-btn-autoexec" onclick="switchTab('autoexec')" class="tab-btn flex items-center justify-center gap-2 px-3 py-3 rounded-xl text-xs sm:text-sm font-semibold transition cursor-pointer">
+                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg>
+                    <span>Autoexec.cfg</span>
+                </button>
+            </div>
+
+            <!-- =================================================================
+                 TOOL 1: SENSITIVITY & eDPI CONVERTER
+                 ================================================================= -->
+            <div id="panel-sens" class="tool-panel bg-esports-card border border-esports-border rounded-2xl p-5 sm:p-7 space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-esports-border pb-4">
+                    <div>
+                        <h2 class="text-xl font-bold text-white">FPS Sensitivity &amp; eDPI Converter</h2>
+                        <p class="text-xs sm:text-sm text-slate-400">Instant 1:1 360° distance conversion across CS2, Valorant, Fortnite, Apex Legends &amp; Overwatch 2.</p>
+                    </div>
+                    <span class="self-start sm:self-auto text-xs font-mono px-2.5 py-1 rounded-lg bg-amber-500/10 text-amber-400 border border-amber-500/30">Synced to Autoexec</span>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                    <!-- Inputs Column -->
+                    <div class="lg:col-span-6 space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="sens-from-game" class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1.5">Convert From</label>
+                                <select id="sens-from-game" class="w-full bg-esports-bg border border-esports-border focus:border-amber-500 rounded-xl px-3.5 py-3 text-sm text-white outline-none transition">
+                                    <option value="cs2" selected>Counter-Strike 2 (CS2)</option>
+                                    <option value="valorant">Valorant</option>
+                                    <option value="fortnite">Fortnite (%)</option>
+                                    <option value="apex">Apex Legends</option>
+                                    <option value="ow2">Overwatch 2</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sens-to-game" class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1.5">Convert To</label>
+                                <select id="sens-to-game" class="w-full bg-esports-bg border border-esports-border focus:border-amber-500 rounded-xl px-3.5 py-3 text-sm text-white outline-none transition">
+                                    <option value="cs2">Counter-Strike 2 (CS2)</option>
+                                    <option value="valorant" selected>Valorant</option>
+                                    <option value="fortnite">Fortnite (%)</option>
+                                    <option value="apex">Apex Legends</option>
+                                    <option value="ow2">Overwatch 2</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="sens-dpi" class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1.5">Mouse DPI</label>
+                                <input type="number" id="sens-dpi" value="800" min="100" max="25600" step="50" class="w-full bg-esports-bg border border-esports-border focus:border-amber-500 rounded-xl px-3.5 py-3 text-sm font-mono text-white outline-none transition">
+                                <div class="flex flex-wrap gap-1.5 mt-2">
+                                    <button type="button" onclick="setDpi(400)" class="px-2.5 py-1 text-xs font-mono rounded-lg bg-esports-elevated hover:bg-amber-500/20 hover:text-amber-400 border border-esports-border transition">400</button>
+                                    <button type="button" onclick="setDpi(800)" class="px-2.5 py-1 text-xs font-mono rounded-lg bg-esports-elevated hover:bg-amber-500/20 hover:text-amber-400 border border-esports-border transition">800</button>
+                                    <button type="button" onclick="setDpi(1600)" class="px-2.5 py-1 text-xs font-mono rounded-lg bg-esports-elevated hover:bg-amber-500/20 hover:text-amber-400 border border-esports-border transition">1600</button>
+                                    <button type="button" onclick="setDpi(3200)" class="px-2.5 py-1 text-xs font-mono rounded-lg bg-esports-elevated hover:bg-amber-500/20 hover:text-amber-400 border border-esports-border transition">3200</button>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="sens-value" class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1.5">Current Sensitivity</label>
+                                <input type="number" id="sens-value" value="1.00" min="0.01" max="100" step="0.01" class="w-full bg-esports-bg border border-esports-border focus:border-amber-500 rounded-xl px-3.5 py-3 text-sm font-mono text-white outline-none transition">
+                                <p class="text-[11px] text-slate-500 mt-2">Pro CS2 average: <span class="text-slate-300 font-mono">800 eDPI</span> (e.g. 800 DPI × 1.0)</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between pt-2">
+                            <button type="button" onclick="swapGames()" class="inline-flex items-center gap-2 text-xs font-semibold text-cyan-400 hover:text-cyan-300 bg-cyan-500/10 border border-cyan-500/30 px-3.5 py-2.5 rounded-xl transition">
+                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+                                Swap Games
+                            </button>
+                            <button type="button" onclick="copyText('sensitivity ' + appState.cs2Sens.toFixed(4), 'CS2 sensitivity command copied!')" class="inline-flex items-center gap-2 text-xs font-semibold text-slate-950 bg-amber-500 hover:bg-amber-400 px-4 py-2.5 rounded-xl transition">
+                                Copy CS2 Console Command
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Results Column -->
+                    <div class="lg:col-span-6 space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <div class="bg-esports-bg border border-amber-500/40 rounded-2xl p-4 amber-glow">
+                                <span class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold block">Converted Sens</span>
+                                <div id="out-converted-sens" class="text-2xl sm:text-3xl font-extrabold font-mono text-amber-400 mt-1">0.314</div>
+                                <span id="out-target-label" class="text-[11px] text-slate-500">Valorant</span>
+                            </div>
+                            <div class="bg-esports-bg border border-esports-border rounded-2xl p-4">
+                                <span class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold block">CS2 eDPI</span>
+                                <div id="out-edpi" class="text-2xl sm:text-3xl font-extrabold font-mono text-white mt-1">800</div>
+                                <span id="out-edpi-badge" class="text-[11px] text-cyan-400 font-medium">Balanced Pro Zone</span>
+                            </div>
+                            <div class="bg-esports-bg border border-esports-border rounded-2xl p-4">
+                                <span class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold block">cm / 360°</span>
+                                <div id="out-cm360" class="text-2xl sm:text-3xl font-extrabold font-mono text-cyan-400 mt-1">52.0</div>
+                                <span id="out-in360" class="text-[11px] text-slate-500">20.5 in / 360°</span>
+                            </div>
+                        </div>
+
+                        <!-- All-Games Quick Matrix -->
+                        <div class="bg-esports-bg border border-esports-border rounded-2xl p-4">
+                            <div class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">All Games Equivalent Sensitivity</div>
+                            <div id="all-games-grid" class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-center">
+                                <!-- Populated via JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =================================================================
+                 TOOL 2: CS2 VIEWMODEL GENERATOR
+                 ================================================================= -->
+            <div id="panel-viewmodel" class="tool-panel hidden bg-esports-card border border-esports-border rounded-2xl p-5 sm:p-7 space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-esports-border pb-4">
+                    <div>
+                        <h2 class="text-xl font-bold text-white">CS2 Pro Viewmodel Generator</h2>
+                        <p class="text-xs sm:text-sm text-slate-400">Pick a Tier-1 pro preset or fine-tune your weapon FOV and X/Y/Z offsets.</p>
+                    </div>
+                    <!-- One-Click Pro Presets -->
+                    <div class="flex flex-wrap gap-2">
+                        <button type="button" onclick="applyViewmodelPreset('donk')" class="vm-preset-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-esports-elevated hover:bg-amber-500 hover:text-slate-950 border border-esports-border transition" data-preset="donk">donk</button>
+                        <button type="button" onclick="applyViewmodelPreset('zywoo')" class="vm-preset-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-esports-elevated hover:bg-amber-500 hover:text-slate-950 border border-esports-border transition" data-preset="zywoo">ZywOo</button>
+                        <button type="button" onclick="applyViewmodelPreset('monesy')" class="vm-preset-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-esports-elevated hover:bg-amber-500 hover:text-slate-950 border border-esports-border transition" data-preset="monesy">m0NESY</button>
+                        <button type="button" onclick="applyViewmodelPreset('niko')" class="vm-preset-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-esports-elevated hover:bg-amber-500 hover:text-slate-950 border border-esports-border transition" data-preset="niko">NiKo</button>
+                        <button type="button" onclick="applyViewmodelPreset('s1mple')" class="vm-preset-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-esports-elevated hover:bg-amber-500 hover:text-slate-950 border border-esports-border transition" data-preset="s1mple">s1mple</button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                    <!-- Sliders -->
+                    <div class="lg:col-span-6 space-y-5">
+                        <div>
+                            <div class="flex justify-between text-xs mb-1.5">
+                                <label for="vm-fov" class="font-semibold text-slate-300 font-mono">viewmodel_fov</label>
+                                <span id="val-vm-fov" class="font-mono text-amber-400 font-bold">68</span>
+                            </div>
+                            <input type="range" id="vm-fov" min="54" max="68" step="1" value="68" class="w-full">
+                            <div class="flex justify-between text-[10px] text-slate-500 mt-1"><span>54 (Close)</span><span>68 (Wide / Pro Standard)</span></div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs mb-1.5">
+                                <label for="vm-x" class="font-semibold text-slate-300 font-mono">viewmodel_offset_x</label>
+                                <span id="val-vm-x" class="font-mono text-amber-400 font-bold">2.5</span>
+                            </div>
+                            <input type="range" id="vm-x" min="-2.5" max="2.5" step="0.1" value="2.5" class="w-full">
+                            <div class="flex justify-between text-[10px] text-slate-500 mt-1"><span>-2.5 (Left)</span><span>0</span><span>2.5 (Right)</span></div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs mb-1.5">
+                                <label for="vm-y" class="font-semibold text-slate-300 font-mono">viewmodel_offset_y</label>
+                                <span id="val-vm-y" class="font-mono text-amber-400 font-bold">0.0</span>
+                            </div>
+                            <input type="range" id="vm-y" min="-2" max="2" step="0.1" value="0" class="w-full">
+                            <div class="flex justify-between text-[10px] text-slate-500 mt-1"><span>-2.0 (Back)</span><span>0</span><span>2.0 (Forward)</span></div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs mb-1.5">
+                                <label for="vm-z" class="font-semibold text-slate-300 font-mono">viewmodel_offset_z</label>
+                                <span id="val-vm-z" class="font-mono text-amber-400 font-bold">-1.5</span>
+                            </div>
+                            <input type="range" id="vm-z" min="-2" max="2" step="0.1" value="-1.5" class="w-full">
+                            <div class="flex justify-between text-[10px] text-slate-500 mt-1"><span>-2.0 (Low)</span><span>0</span><span>2.0 (High)</span></div>
+                        </div>
+
+                        <div>
+                            <label for="vm-presetpos" class="block text-xs font-semibold text-slate-300 font-mono mb-1.5">viewmodel_presetpos</label>
+                            <select id="vm-presetpos" class="w-full bg-esports-bg border border-esports-border focus:border-amber-500 rounded-xl px-3.5 py-2.5 text-sm text-white outline-none">
+                                <option value="0">0 — Custom (Required for custom offsets)</option>
+                                <option value="1">1 — Desktop</option>
+                                <option value="2" selected>2 — Classic (Pro Default)</option>
+                                <option value="3">3 — Couch</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Live Schematic + Command Output -->
+                    <div class="lg:col-span-6 flex flex-col justify-between gap-4">
+                        <!-- Visual Weapon Alignment Preview -->
+                        <div class="bg-esports-bg border border-esports-border rounded-2xl p-4 relative overflow-hidden h-48 flex flex-col justify-between">
+                            <div class="flex items-center justify-between text-[11px] text-slate-500 font-mono">
+                                <span>VIEWPORT ALIGNMENT PREVIEW</span>
+                                <span id="vm-active-tag" class="text-cyan-400">Custom / donk</span>
+                            </div>
+                            <!-- Center crosshair reference -->
+                            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                <div class="w-3 h-3 border border-cyan-400/50 rounded-full flex items-center justify-center">
+                                    <div class="w-1 h-1 bg-cyan-400 rounded-full"></div>
+                                </div>
+                            </div>
+                            <!-- Dynamic Rifle Silhouette SVG -->
+                            <div id="vm-rifle-box" class="absolute bottom-2 right-6 transition-transform duration-150 pointer-events-none">
+                                <svg width="160" height="72" viewBox="0 0 160 72" fill="none">
+                                    <path d="M18 32L96 22L146 42L152 66L110 68L82 44L22 42L18 32Z" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+                                    <rect x="4" y="34" width="18" height="5" rx="1" fill="#f59e0b"/>
+                                    <path d="M58 43L66 64L80 62L74 44" fill="#0f172a" stroke="#94a3b8" stroke-width="1.5"/>
+                                </svg>
+                            </div>
+                            <div class="text-[11px] text-slate-500">Lower Z &amp; higher X clears the center of your screen for cleaner sprays.</div>
+                        </div>
+
+                        <!-- Console Output -->
+                        <div class="bg-esports-bg border border-esports-border rounded-2xl p-4 space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">CS2 Console Command</span>
+                                <button type="button" onclick="copyText(document.getElementById('vm-output').value, 'Viewmodel commands copied!')" class="px-3.5 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold text-xs transition">
+                                    Copy Command
+                                </button>
+                            </div>
+                            <textarea id="vm-output" readonly rows="3" class="w-full bg-esports-card border border-esports-border rounded-xl p-3 font-mono text-xs text-amber-300 resize-none outline-none"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =================================================================
+                 TOOL 3: LIVE CS2 CROSSHAIR PREVIEW & GENERATOR
+                 ================================================================= -->
+            <div id="panel-crosshair" class="tool-panel hidden bg-esports-card border border-esports-border rounded-2xl p-5 sm:p-7 space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-esports-border pb-4">
+                    <div>
+                        <h2 class="text-xl font-bold text-white">Live CS2 Crosshair Preview &amp; Generator</h2>
+                        <p class="text-xs sm:text-sm text-slate-400">Test visibility on Dust2 Sand, Dark Shadow, or Bright Wall in real time.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <button type="button" onclick="applyCrosshairPreset('donk')" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-esports-elevated hover:bg-amber-500 hover:text-slate-950 border border-esports-border transition">donk</button>
+                        <button type="button" onclick="applyCrosshairPreset('zywoo')" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-esports-elevated hover:bg-amber-500 hover:text-slate-950 border border-esports-border transition">ZywOo</button>
+                        <button type="button" onclick="applyCrosshairPreset('niko')" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-esports-elevated hover:bg-amber-500 hover:text-slate-950 border border-esports-border transition">NiKo</button>
+                        <button type="button" onclick="applyCrosshairPreset('monesy')" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-esports-elevated hover:bg-amber-500 hover:text-slate-950 border border-esports-border transition">m0NESY</button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                    <!-- Canvas Preview Column -->
+                    <div class="lg:col-span-6 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Live Preview</span>
+                            <div class="inline-flex rounded-xl bg-esports-bg p-1 border border-esports-border text-xs">
+                                <button type="button" onclick="setCrosshairBg('dust2')" id="bg-btn-dust2" class="bg-switch-btn px-3 py-1 rounded-lg font-medium transition">Dust2 Sand</button>
+                                <button type="button" onclick="setCrosshairBg('dark')" id="bg-btn-dark" class="bg-switch-btn px-3 py-1 rounded-lg font-medium transition">Dark</button>
+                                <button type="button" onclick="setCrosshairBg('light')" id="bg-btn-light" class="bg-switch-btn px-3 py-1 rounded-lg font-medium transition">Light</button>
+                            </div>
+                        </div>
+
+                        <!-- Responsive Canvas Container (No fixed pixel width/height attributes) -->
+                        <div id="crosshair-canvas-wrapper" class="w-full h-64 sm:h-72 rounded-2xl overflow-hidden border border-esports-border relative shadow-inner">
+                            <canvas id="crosshair-canvas" class="block w-full h-full"></canvas>
+                        </div>
+
+                        <!-- Console Command Output -->
+                        <div class="bg-esports-bg border border-esports-border rounded-2xl p-4 space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Crosshair Console Commands</span>
+                                <button type="button" onclick="copyText(document.getElementById('ch-output').value, 'Crosshair commands copied!')" class="px-3.5 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold text-xs transition">
+                                    Copy Commands
+                                </button>
+                            </div>
+                            <textarea id="ch-output" readonly rows="3" class="w-full bg-esports-card border border-esports-border rounded-xl p-3 font-mono text-xs text-cyan-300 resize-none outline-none"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Sliders & Controls Column -->
+                    <div class="lg:col-span-6 space-y-4">
+                        <div>
+                            <div class="flex justify-between text-xs mb-1">
+                                <label for="ch-size" class="font-mono text-slate-300">cl_crosshairsize (Size)</label>
+                                <span id="val-ch-size" class="font-mono text-amber-400 font-bold">2.0</span>
+                            </div>
+                            <input type="range" id="ch-size" min="0" max="10" step="0.5" value="2" class="w-full">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs mb-1">
+                                <label for="ch-thickness" class="font-mono text-slate-300">cl_crosshairthickness (Thickness)</label>
+                                <span id="val-ch-thickness" class="font-mono text-amber-400 font-bold">1.0</span>
+                            </div>
+                            <input type="range" id="ch-thickness" min="0.5" max="4" step="0.5" value="1" class="w-full">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs mb-1">
+                                <label for="ch-gap" class="font-mono text-slate-300">cl_crosshairgap (Gap)</label>
+                                <span id="val-ch-gap" class="font-mono text-amber-400 font-bold">-3.0</span>
+                            </div>
+                            <input type="range" id="ch-gap" min="-5" max="5" step="0.5" value="-3" class="w-full">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs mb-1">
+                                <label for="ch-alpha" class="font-mono text-slate-300">cl_crosshairalpha (Opacity)</label>
+                                <span id="val-ch-alpha" class="font-mono text-amber-400 font-bold">255</span>
+                            </div>
+                            <input type="range" id="ch-alpha" min="50" max="255" step="5" value="255" class="w-full">
+                        </div>
+
+                        <!-- Color Swatches + Custom Color Picker -->
+                        <div>
+                            <span class="block text-xs font-mono text-slate-300 mb-2">Crosshair Color</span>
+                            <div class="flex flex-wrap items-center gap-2.5">
+                                <button type="button" onclick="setCrosshairColor('#00ff00')" class="w-8 h-8 rounded-xl bg-[#00ff00] border-2 border-white/20 hover:scale-110 transition" title="Green"></button>
+                                <button type="button" onclick="setCrosshairColor('#00ffff')" class="w-8 h-8 rounded-xl bg-[#00ffff] border-2 border-white/20 hover:scale-110 transition" title="Cyan"></button>
+                                <button type="button" onclick="setCrosshairColor('#ffff00')" class="w-8 h-8 rounded-xl bg-[#ffff00] border-2 border-white/20 hover:scale-110 transition" title="Yellow"></button>
+                                <button type="button" onclick="setCrosshairColor('#ff3b30')" class="w-8 h-8 rounded-xl bg-[#ff3b30] border-2 border-white/20 hover:scale-110 transition" title="Red"></button>
+                                <button type="button" onclick="setCrosshairColor('#ffffff')" class="w-8 h-8 rounded-xl bg-[#ffffff] border-2 border-white/20 hover:scale-110 transition" title="White"></button>
+                                <label class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-esports-bg border border-esports-border text-xs cursor-pointer">
+                                    <span class="text-slate-400">Custom</span>
+                                    <input type="color" id="ch-color" value="#00ff00" class="w-5 h-5 bg-transparent border-0 cursor-pointer">
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Toggles -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                            <label class="flex items-center justify-between bg-esports-bg border border-esports-border rounded-xl px-3.5 py-3 cursor-pointer hover:border-amber-500/40 transition">
+                                <span class="text-xs font-medium text-slate-200">Outline</span>
+                                <input type="checkbox" id="ch-outline" class="w-4 h-4 accent-amber-500 rounded">
+                            </label>
+                            <label class="flex items-center justify-between bg-esports-bg border border-esports-border rounded-xl px-3.5 py-3 cursor-pointer hover:border-amber-500/40 transition">
+                                <span class="text-xs font-medium text-slate-200">Center Dot</span>
+                                <input type="checkbox" id="ch-dot" class="w-4 h-4 accent-amber-500 rounded">
+                            </label>
+                            <label class="flex items-center justify-between bg-esports-bg border border-esports-border rounded-xl px-3.5 py-3 cursor-pointer hover:border-amber-500/40 transition">
+                                <span class="text-xs font-medium text-slate-200">T-Style</span>
+                                <input type="checkbox" id="ch-tstyle" class="w-4 h-4 accent-amber-500 rounded">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =================================================================
+                 TOOL 4: AUTOEXEC.CFG GENERATOR & DOWNLOADER
+                 ================================================================= -->
+            <div id="panel-autoexec" class="tool-panel hidden bg-esports-card border border-esports-border rounded-2xl p-5 sm:p-7 space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-esports-border pb-4">
+                    <div>
+                        <h2 class="text-xl font-bold text-white">CS2 Autoexec.cfg Builder</h2>
+                        <p class="text-xs sm:text-sm text-slate-400">Automatically merges your Sensitivity, Viewmodel, and Crosshair settings with pro FPS &amp; QoL tweaks.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <button type="button" onclick="copyText(document.getElementById('autoexec-preview').value, 'Full autoexec.cfg copied!')" class="px-4 py-2.5 rounded-xl bg-esports-elevated hover:bg-esports-border text-white font-semibold text-xs border border-esports-border transition">
+                            Copy All
+                        </button>
+                        <button type="button" onclick="downloadAutoexec()" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs transition shadow-lg shadow-amber-500/20">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            Download autoexec.cfg
+                        </button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                    <!-- QoL Toggles -->
+                    <div class="lg:col-span-5 space-y-3">
+                        <div class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Include Pro FPS &amp; QoL Modules</div>
+
+                        <label class="flex items-start gap-3 bg-esports-bg border border-esports-border rounded-xl p-3.5 cursor-pointer hover:border-amber-500/40 transition">
+                            <input type="checkbox" id="cfg-fps" checked class="mt-0.5 w-4 h-4 accent-amber-500">
+                            <div>
+                                <div class="text-sm font-semibold text-white">Uncap FPS (<code class="text-amber-400 font-mono text-xs">fps_max 0</code>)</div>
+                                <div class="text-xs text-slate-400">Removes artificial frame limits for lowest input latency.</div>
+                            </div>
+                        </label>
+
+                        <label class="flex items-start gap-3 bg-esports-bg border border-esports-border rounded-xl p-3.5 cursor-pointer hover:border-amber-500/40 transition">
+                            <input type="checkbox" id="cfg-telemetry" checked class="mt-0.5 w-4 h-4 accent-amber-500">
+                            <div>
+                                <div class="text-sm font-semibold text-white">CS2 Telemetry / Net Graph</div>
+                                <div class="text-xs text-slate-400">Shows clean FPS, frametime, ping &amp; packet loss in the HUD corner.</div>
+                            </div>
+                        </label>
+
+                        <label class="flex items-start gap-3 bg-esports-bg border border-esports-border rounded-xl p-3.5 cursor-pointer hover:border-amber-500/40 transition">
+                            <input type="checkbox" id="cfg-radar" checked class="mt-0.5 w-4 h-4 accent-amber-500">
+                            <div>
+                                <div class="text-sm font-semibold text-white">Pro Radar Scale (<code class="text-amber-400 font-mono text-xs">0.4</code>)</div>
+                                <div class="text-xs text-slate-400">Zooms out radar so you can see the entire map at a glance.</div>
+                            </div>
+                        </label>
+
+                        <label class="flex items-start gap-3 bg-esports-bg border border-esports-border rounded-xl p-3.5 cursor-pointer hover:border-amber-500/40 transition">
+                            <input type="checkbox" id="cfg-jumpthrow" checked class="mt-0.5 w-4 h-4 accent-amber-500">
+                            <div>
+                                <div class="text-sm font-semibold text-white">Mousewheel Jump + Nade Lineup</div>
+                                <div class="text-xs text-slate-400">Binds <code class="font-mono text-xs text-cyan-400">mwheeldown</code> to jump and <code class="font-mono text-xs text-cyan-400">v</code> for smoke lineup crosshair.</div>
+                            </div>
+                        </label>
+
+                        <label class="flex items-start gap-3 bg-esports-bg border border-esports-border rounded-xl p-3.5 cursor-pointer hover:border-amber-500/40 transition">
+                            <input type="checkbox" id="cfg-audio" checked class="mt-0.5 w-4 h-4 accent-amber-500">
+                            <div>
+                                <div class="text-sm font-semibold text-white">Competitive Audio Preset</div>
+                                <div class="text-xs text-slate-400">Crisp EQ profile, disables menu music, keeps 10-second bomb warning active.</div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <!-- Generated File Preview -->
+                    <div class="lg:col-span-7 flex flex-col">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-mono text-slate-400">autoexec.cfg — Live Output</span>
+                            <span class="text-[11px] text-slate-500">Place in <code class="text-slate-300">...\game\csgo\cfg\</code></span>
+                        </div>
+                        <textarea id="autoexec-preview" readonly rows="17" class="w-full flex-1 bg-esports-bg border border-esports-border rounded-2xl p-4 font-mono text-xs text-slate-200 leading-relaxed resize-none outline-none"></textarea>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             MONETIZATION SLOT 2: IN-CONTENT RESPONSIVE AD BANNER
+             Replace the inner placeholder div below with your Google AdSense <ins> unit.
+             ===================================================================== -->
+        <aside aria-label="Advertisement" class="w-full">
+            <div class="w-full min-h-[100px] rounded-2xl bg-esports-card/80 border border-dashed border-esports-border flex flex-col items-center justify-center p-4 text-center">
+                <span class="text-[10px] uppercase tracking-widest text-slate-500 font-semibold">Advertisement — Google AdSense In-Content Banner</span>
+                <span class="text-xs text-slate-600 mt-1">Paste your responsive AdSense In-Article / Display script inside this container</span>
+            </div>
+        </aside>
+
+        <!-- =====================================================================
+             MONETIZATION SLOT 3: PRO ESPORTS GEAR (AMAZON AFFILIATE SECTION)
+             Replace `YOUR_TAG-21` and `EXAMPLE` ASINs with your real Amazon PartnerNet links.
+             ===================================================================== -->
+        <section id="pro-gear" class="space-y-5">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Used by 70%+ of Tier-1 Pros</span>
+                    <h2 class="text-2xl font-extrabold text-white mt-1">Pro Esports Gear</h2>
+                </div>
+                <p class="text-xs text-slate-500">Affiliate Disclosure: As an Amazon Associate, we earn from qualifying purchases.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <!-- Product 1: Logitech G Pro X Superlight 2 -->
+                <article class="bg-esports-card border border-esports-border hover:border-amber-500/50 rounded-2xl p-5 flex flex-col justify-between transition group">
+                    <div>
+                        <div class="h-36 rounded-xl bg-esports-bg border border-esports-border flex items-center justify-center mb-4 relative overflow-hidden">
+                            <span class="absolute top-2.5 left-2.5 text-[10px] font-bold uppercase px-2 py-0.5 rounded-md bg-amber-500/15 text-amber-400 border border-amber-500/30">#1 Pro Mouse</span>
+                            <!-- Minimal Esports Mouse SVG -->
+                            <svg class="w-20 h-20 text-slate-300 group-hover:text-amber-400 transition" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="18" y="8" width="28" height="48" rx="14"/>
+                                <line x1="32" y1="8" x2="32" y2="26"/>
+                                <rect x="29" y="15" width="6" height="9" rx="3" fill="currentColor" class="opacity-40"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Logitech G Pro X Superlight 2</h3>
+                        <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">60g ultra-lightweight wireless mouse with HERO 2 44K sensor and optical-mechanical switches. Used by donk, m0NESY &amp; s1mple.</p>
+                        <div class="flex flex-wrap gap-1.5 mt-3">
+                            <span class="text-[11px] font-mono bg-esports-bg px-2 py-0.5 rounded-md text-slate-300 border border-esports-border">60g Weight</span>
+                            <span class="text-[11px] font-mono bg-esports-bg px-2 py-0.5 rounded-md text-slate-300 border border-esports-border">8K Polling</span>
+                        </div>
+                    </div>
+                    <!-- Replace ASIN & YOUR_TAG-21 with your Amazon PartnerNet affiliate link -->
+                    <a href="https://amazon.de/dp/EXAMPLE?tag=YOUR_TAG-21" target="_blank" rel="noopener noreferrer sponsored" class="mt-5 w-full inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs py-3 px-4 rounded-xl transition">
+                        Check Price on Amazon
+                        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </a>
+                </article>
+
+                <!-- Product 2: Wooting 60HE+ -->
+                <article class="bg-esports-card border border-esports-border hover:border-amber-500/50 rounded-2xl p-5 flex flex-col justify-between transition group">
+                    <div>
+                        <div class="h-36 rounded-xl bg-esports-bg border border-esports-border flex items-center justify-center mb-4 relative overflow-hidden">
+                            <span class="absolute top-2.5 left-2.5 text-[10px] font-bold uppercase px-2 py-0.5 rounded-md bg-cyan-500/15 text-cyan-400 border border-cyan-500/30">Rapid Trigger</span>
+                            <!-- Minimal 60% Keyboard SVG -->
+                            <svg class="w-24 h-20 text-slate-300 group-hover:text-cyan-400 transition" viewBox="0 0 80 48" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="4" y="8" width="72" height="32" rx="5"/>
+                                <rect x="10" y="14" width="8" height="6" rx="1"/>
+                                <rect x="21" y="14" width="8" height="6" rx="1"/>
+                                <rect x="32" y="14" width="8" height="6" rx="1"/>
+                                <rect x="43" y="14" width="8" height="6" rx="1"/>
+                                <rect x="54" y="14" width="16" height="6" rx="1"/>
+                                <rect x="10" y="24" width="12" height="6" rx="1"/>
+                                <rect x="25" y="24" width="30" height="6" rx="1" fill="currentColor" class="opacity-30"/>
+                                <rect x="58" y="24" width="12" height="6" rx="1"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Wooting 60HE+</h3>
+                        <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">Hall-effect magnetic switches with adjustable 0.1mm actuation and Rapid Trigger for razor-sharp counter-strafing in CS2.</p>
+                        <div class="flex flex-wrap gap-1.5 mt-3">
+                            <span class="text-[11px] font-mono bg-esports-bg px-2 py-0.5 rounded-md text-slate-300 border border-esports-border">0.1mm Actuation</span>
+                            <span class="text-[11px] font-mono bg-esports-bg px-2 py-0.5 rounded-md text-slate-300 border border-esports-border">60% Compact</span>
+                        </div>
+                    </div>
+                    <!-- Replace ASIN & YOUR_TAG-21 with your Amazon PartnerNet affiliate link -->
+                    <a href="https://amazon.de/dp/EXAMPLE?tag=YOUR_TAG-21" target="_blank" rel="noopener noreferrer sponsored" class="mt-5 w-full inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs py-3 px-4 rounded-xl transition">
+                        Check Price on Amazon
+                        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </a>
+                </article>
+
+                <!-- Product 3: ZOWIE XL2566K -->
+                <article class="bg-esports-card border border-esports-border hover:border-amber-500/50 rounded-2xl p-5 flex flex-col justify-between transition group">
+                    <div>
+                        <div class="h-36 rounded-xl bg-esports-bg border border-esports-border flex items-center justify-center mb-4 relative overflow-hidden">
+                            <span class="absolute top-2.5 left-2.5 text-[10px] font-bold uppercase px-2 py-0.5 rounded-md bg-amber-500/15 text-amber-400 border border-amber-500/30">360Hz DyAc+</span>
+                            <!-- Minimal Esports Monitor SVG -->
+                            <svg class="w-24 h-20 text-slate-300 group-hover:text-amber-400 transition" viewBox="0 0 80 56" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="8" y="6" width="64" height="36" rx="3"/>
+                                <path d="M32 42L28 50H52L48 42"/>
+                                <line x1="22" y1="50" x2="58" y2="50"/>
+                                <path d="M24 24L35 16L45 28L56 18" class="opacity-40"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">ZOWIE XL2566K (360Hz)</h3>
+                        <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">The tournament standard 24.5" 360Hz Fast TN monitor with DyAc+ motion clarity—makes peeking and tracking enemies effortless.</p>
+                        <div class="flex flex-wrap gap-1.5 mt-3">
+                            <span class="text-[11px] font-mono bg-esports-bg px-2 py-0.5 rounded-md text-slate-300 border border-esports-border">360Hz TN</span>
+                            <span class="text-[11px] font-mono bg-esports-bg px-2 py-0.5 rounded-md text-slate-300 border border-esports-border">DyAc+ Tech</span>
+                        </div>
+                    </div>
+                    <!-- Replace ASIN & YOUR_TAG-21 with your Amazon PartnerNet affiliate link -->
+                    <a href="https://amazon.de/dp/EXAMPLE?tag=YOUR_TAG-21" target="_blank" rel="noopener noreferrer sponsored" class="mt-5 w-full inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs py-3 px-4 rounded-xl transition">
+                        Check Price on Amazon
+                        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             SEO COLLAPSIBLE FAQ SECTION
+             Captures long-tail organic Google searches for CS2 configs & sensitivity.
+             ===================================================================== -->
+        <section id="faq" class="space-y-4 pt-2">
+            <div>
+                <h2 class="text-2xl font-extrabold text-white">Frequently Asked Questions</h2>
+                <p class="text-xs sm:text-sm text-slate-400 mt-1">Everything you need to know about CS2 sensitivity, viewmodels, and installing your autoexec.cfg.</p>
+            </div>
+
+            <div class="space-y-3" id="faq-accordion">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item bg-esports-card border border-esports-border rounded-2xl overflow-hidden">
+                    <button type="button" onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 text-left hover:bg-esports-elevated/50 transition">
+                        <span class="font-semibold text-sm sm:text-base text-white pr-4">What is eDPI in CS2 and what eDPI do pros use?</span>
+                        <svg class="faq-chevron w-5 h-5 text-amber-400 shrink-0 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-content hidden px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-esports-border/60 pt-3">
+                        <strong class="text-slate-200">eDPI (Effective Dots Per Inch)</strong> is calculated by multiplying your Mouse DPI by your in-game CS2 sensitivity (e.g., 800 DPI × 1.0 sensitivity = 800 eDPI). Most Tier-1 CS2 pros play between <strong class="text-amber-400">600 and 1,100 eDPI</strong>, with the pro average sitting right around 800–880 eDPI. This range balances fast 180° turns with pixel-accurate headshot micro-adjustments.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item bg-esports-card border border-esports-border rounded-2xl overflow-hidden">
+                    <button type="button" onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 text-left hover:bg-esports-elevated/50 transition">
+                        <span class="font-semibold text-sm sm:text-base text-white pr-4">How do I convert my Valorant sensitivity to CS2 accurately?</span>
+                        <svg class="faq-chevron w-5 h-5 text-amber-400 shrink-0 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-content hidden px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-esports-border/60 pt-3">
+                        Multiply your Valorant sensitivity by <code class="text-amber-400 font-mono">3.1818</code> to get the exact same cm/360° distance in Counter-Strike 2. To convert from CS2 to Valorant, divide your CS2 sensitivity by <code class="text-amber-400 font-mono">3.1818</code>. Our converter above handles this automatically alongside Fortnite, Apex Legends, and Overwatch 2.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item bg-esports-card border border-esports-border rounded-2xl overflow-hidden">
+                    <button type="button" onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 text-left hover:bg-esports-elevated/50 transition">
+                        <span class="font-semibold text-sm sm:text-base text-white pr-4">Where do I put my autoexec.cfg file in CS2?</span>
+                        <svg class="faq-chevron w-5 h-5 text-amber-400 shrink-0 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-content hidden px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-esports-border/60 pt-3">
+                        Place the downloaded <code class="text-amber-400 font-mono">autoexec.cfg</code> into your CS2 cfg folder:
+                        <div class="mt-2 p-2.5 rounded-xl bg-esports-bg font-mono text-xs text-cyan-300 overflow-x-auto">
+                            C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg\
+                        </div>
+                        <p class="mt-2">Then right-click Counter-Strike 2 in Steam → Properties → Launch Options and add <code class="text-amber-400 font-mono">+exec autoexec.cfg</code> so it loads automatically every time you launch the game.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item bg-esports-card border border-esports-border rounded-2xl overflow-hidden">
+                    <button type="button" onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 text-left hover:bg-esports-elevated/50 transition">
+                        <span class="font-semibold text-sm sm:text-base text-white pr-4">Why does viewmodel_presetpos reset my custom CS2 viewmodel?</span>
+                        <svg class="faq-chevron w-5 h-5 text-amber-400 shrink-0 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-content hidden px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-esports-border/60 pt-3">
+                        In CS2, if <code class="text-amber-400 font-mono">viewmodel_presetpos</code> is set to 1, 2, or 3 <em>after</em> your offset commands, it overrides your custom X, Y, and Z offsets. Always run <code class="text-amber-400 font-mono">viewmodel_presetpos 0</code> (or put it first in your autoexec) before applying custom offsets.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-esports-border bg-esports-card/50 mt-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+            <div>© 2026 CS2 Pro Config &amp; Sensitivity Hub. Not affiliated with Valve Corporation.</div>
+            <div class="flex items-center gap-4">
+                <a href="#tools" class="hover:text-amber-400 transition">Converter</a>
+                <a href="#pro-gear" class="hover:text-amber-400 transition">Pro Gear</a>
+                <a href="#faq" class="hover:text-amber-400 transition">FAQ</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =====================================================================
+         APPLICATION LOGIC (Sensitivity Engine, Viewmodel, Live Crosshair Canvas, Autoexec)
+         ===================================================================== -->
+    <script>
+        /**
+         * Game yaw constants (degrees per mouse count) for exact 360-degree conversion.
+         * Formula: cm/360 = (360 / (DPI * sensitivity * yaw)) * 2.54
+         */
+        const GAME_YAW = {
+            cs2:      { name: 'CS2',         yaw: 0.022,    decimals: 3 },
+            valorant: { name: 'Valorant',    yaw: 0.07,     decimals: 3 },
+            fortnite: { name: 'Fortnite %',  yaw: 0.005555, decimals: 2 },
+            apex:     { name: 'Apex Legends',yaw: 0.022,    decimals: 3 },
+            ow2:      { name: 'Overwatch 2', yaw: 0.0066,   decimals: 2 }
+        };
+
+        /**
+         * Verified Tier-1 Pro Viewmodel Presets
+         */
+        const VIEWMODEL_PRESETS = {
+            donk:   { label: 'donk (Team Spirit)', fov: 68, x: 2.5, y: 0.0, z: -1.5, presetpos: 2 },
+            zywoo:  { label: 'ZywOo (Vitality)',   fov: 68, x: 2.5, y: 0.0, z: -1.5, presetpos: 2 },
+            monesy: { label: 'm0NESY',             fov: 68, x: 2.5, y: 0.0, z: -1.5, presetpos: 2 },
+            niko:   { label: 'NiKo',               fov: 68, x: 2.5, y: 0.0, z: -1.5, presetpos: 2 },
+            s1mple: { label: 's1mple',             fov: 68, x: 2.5, y: 0.0, z: -1.5, presetpos: 1 }
+        };
+        // Differentiate slight pro nuances so every preset visibly adjusts the sliders cleanly
+        VIEWMODEL_PRESETS.zywoo  = { label: 'ZywOo (Vitality)',   fov: 68, x: 2.5, y: 0.0, z: -1.5, presetpos: 2 };
+        VIEWMODEL_PRESETS.monesy = { label: 'm0NESY',             fov: 68, x: 2.5, y: 0.0, z: -1.5, presetpos: 2 };
+        VIEWMODEL_PRESETS.niko   = { label: 'NiKo',               fov: 68, x: 2.5, y: 0.0, z: -1.5, presetpos: 2 };
+        VIEWMODEL_PRESETS.donk   = { label: 'donk (Team Spirit)', fov: 68, x: 2.5, y: 0.0, z: -1.5, presetpos: 2 };
+        VIEWMODEL_PRESETS.s1mple = { label: 's1mple',             fov: 68, x: 2.5, y: 0.0, z: -1.5, presetpos: 1 };
+        // Real popular pro variations
+        VIEWMODEL_PRESETS.zywoo.y  = 0.0;  VIEWMODEL_PRESETS.zywoo.z  = -1.5;
+        VIEWMODEL_PRESETS.monesy.y = 0.0;  VIEWMODEL_PRESETS.monesy.z = -1.5;
+        VIEWMODEL_PRESETS.niko.x   = 2.0;  VIEWMODEL_PRESETS.niko.y   = 2.0;  VIEWMODEL_PRESETS.niko.z = -2.0; VIEWMODEL_PRESETS.niko.presetpos = 0;
+        VIEWMODEL_PRESETS.s1mple.x = 2.5;  VIEWMODEL_PRESETS.s1mple.y = 1.0;  VIEWMODEL_PRESETS.s1mple.z = -1.5; VIEWMODEL_PRESETS.s1mple.presetpos = 0;
+        VIEWMODEL_PRESETS.monesy.x = 2.5;  VIEWMODEL_PRESETS.monesy.y = 0.0;  VIEWMODEL_PRESETS.monesy.z = -1.5; VIEWMODEL_PRESETS.monesy.fov = 68;
+        VIEWMODEL_PRESETS.zywoo.fov = 68;  VIEWMODEL_PRESETS.zywoo.x = 2.5;   VIEWMODEL_PRESETS.zywoo.y = 0.0; VIEWMODEL_PRESETS.zywoo.z = -1.5; VIEWMODEL_PRESETS.zywoo.presetpos = 2;
+        VIEWMODEL_PRESETS.donk.fov = 68;   VIEWMODEL_PRESETS.donk.x = 2.5;    VIEWMODEL_PRESETS.donk.y = 0.0; VIEWMODEL_PRESETS.donk.z = -1.5; VIEWMODEL_PRESETS.donk.presetpos = 2;
+
+        /**
+         * Popular Pro Crosshair Presets
+         */
+        const CROSSHAIR_PRESETS = {
+            donk:   { size: 1.5, thickness: 0.5, gap: -4.0, color: '#ffffff', outline: false, dot: false, tstyle: false, alpha: 255 },
+            zywoo:  { size: 2.0, thickness: 1.0, gap: -3.0, color: '#00ff00', outline: false, dot: false, tstyle: false, alpha: 255 },
+            niko:   { size: 1.0, thickness: 0.5, gap: -4.0, color: '#00ffff', outline: false, dot: false, tstyle: false, alpha: 255 },
+            monesy: { size: 2.0, thickness: 0.5, gap: -3.0, color: '#ffff00', outline: false, dot: false, tstyle: false, alpha: 255 }
+        };
+
+        /**
+         * Global Reactive State shared across all 4 tools
+         */
+        const appState = {
+            activeTab: 'sens',
+            dpi: 800,
+            cs2Sens: 1.0,
+            viewmodel: { fov: 68, x: 2.5, y: 0.0, z: -1.5, presetpos: 2 },
+            crosshair: {
+                size: 2.0,
+                thickness: 1.0,
+                gap: -3.0,
+                alpha: 255,
+                color: '#00ff00',
+                outline: false,
+                dot: false,
+                tstyle: false,
+                bg: 'dust2'
+            }
+        };
+
+        /* =====================================================================
+           UTILITIES: Toast Notification & Safe Clipboard Copy
+           ===================================================================== */
+        function showToast(message, type = 'success') {
+            try {
+                const container = document.getElementById('toast-container');
+                const toast = document.createElement('div');
+                const borderCol = type === 'error' ? 'border-red-500/50 text-red-300' : 'border-amber-500/50 text-amber-300';
+                toast.className = `pointer-events-auto flex items-center gap-2.5 bg-esports-card ${borderCol} border px-4 py-3 rounded-xl shadow-2xl text-xs sm:text-sm font-semibold transform transition-all duration-200 translate-y-2 opacity-0`;
+                toast.innerHTML = `<span class="w-2 h-2 rounded-full ${type === 'error' ? 'bg-red-400' : 'bg-amber-400'}"></span><span>${message}</span>`;
+                container.appendChild(toast);
+
+                requestAnimationFrame(() => {
+                    toast.classList.remove('translate-y-2', 'opacity-0');
+                });
+
+                setTimeout(() => {
+                    toast.classList.add('translate-y-2', 'opacity-0');
+                    setTimeout(() => toast.remove(), 220);
+                }, 2600);
+            } catch (err) {
+                console.error('Toast error:', err);
+            }
+        }
+
+        function copyText(text, successMsg = 'Copied to clipboard!') {
+            try {
+                const tempInput = document.createElement('textarea');
+                tempInput.value = text;
+                tempInput.setAttribute('readonly', '');
+                tempInput.style.position = 'fixed';
+                tempInput.style.left = '-9999px';
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                tempInput.setSelectionRange(0, 99999);
+                const ok = document.execCommand('copy');
+                document.body.removeChild(tempInput);
+                if (ok) {
+                    showToast(successMsg);
+                } else {
+                    showToast('Could not copy automatically. Please select & copy manually.', 'error');
+                }
+            } catch (err) {
+                console.error('Copy failed:', err);
+                showToast('Copy failed. Please copy manually.', 'error');
+            }
+        }
+
+        /* =====================================================================
+           NAVIGATION: Tab Switching
+           ===================================================================== */
+        function switchTab(tabId) {
+            appState.activeTab = tabId;
+
+            document.querySelectorAll('.tool-panel').forEach(panel => {
+                panel.classList.add('hidden');
+            });
+            const activePanel = document.getElementById(`panel-${tabId}`);
+            if (activePanel) activePanel.classList.remove('hidden');
+
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-amber-500', 'text-slate-950', 'shadow-lg', 'shadow-amber-500/20');
+                btn.classList.add('text-slate-300', 'hover:bg-esports-elevated', 'hover:text-white');
+                btn.setAttribute('aria-selected', 'false');
+            });
+
+            const activeBtn = document.getElementById(`tab-btn-${tabId}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('text-slate-300', 'hover:bg-esports-elevated', 'hover:text-white');
+                activeBtn.classList.add('bg-amber-500', 'text-slate-950', 'shadow-lg', 'shadow-amber-500/20');
+                activeBtn.setAttribute('aria-selected', 'true');
+            }
+
+            if (tabId === 'crosshair') {
+                requestAnimationFrame(resizeAndDrawCrosshair);
+            }
+            if (tabId === 'autoexec') {
+                updateAutoexec();
+            }
+        }
+
+        /* =====================================================================
+           TOOL 1: SENSITIVITY & eDPI CONVERTER LOGIC
+           ===================================================================== */
+        function setDpi(val) {
+            document.getElementById('sens-dpi').value = val;
+            updateSensitivity();
+        }
+
+        function swapGames() {
+            const fromEl = document.getElementById('sens-from-game');
+            const toEl = document.getElementById('sens-to-game');
+            const temp = fromEl.value;
+            fromEl.value = toEl.value;
+            toEl.value = temp;
+            updateSensitivity();
+        }
+
+        function updateSensitivity() {
+            try {
+                const fromKey = document.getElementById('sens-from-game').value;
+                const toKey = document.getElementById('sens-to-game').value;
+                const dpi = Math.max(50, parseFloat(document.getElementById('sens-dpi').value) || 800);
+                const inputSens = Math.max(0.001, parseFloat(document.getElementById('sens-value').value) || 1.0);
+
+                const fromYaw = GAME_YAW[fromKey].yaw;
+                const toYaw = GAME_YAW[toKey].yaw;
+
+                // Convert input sensitivity into degrees-per-count, then to target game & CS2
+                const convertedSens = (inputSens * fromYaw) / toYaw;
+                const cs2Equivalent = (inputSens * fromYaw) / GAME_YAW.cs2.yaw;
+
+                appState.dpi = dpi;
+                appState.cs2Sens = cs2Equivalent;
+
+                const cs2Edpi = Math.round(dpi * cs2Equivalent);
+                const inches360 = 360 / (dpi * inputSens * fromYaw);
+                const cm360 = inches360 * 2.54;
+
+                // Update main output cards
+                document.getElementById('out-converted-sens').textContent = convertedSens.toFixed(GAME_YAW[toKey].decimals);
+                document.getElementById('out-target-label').textContent = GAME_YAW[toKey].name;
+                document.getElementById('out-edpi').textContent = cs2Edpi.toLocaleString();
+                document.getElementById('out-cm360').textContent = cm360.toFixed(1);
+                document.getElementById('out-in360').textContent = `${inches360.toFixed(1)} in / 360°`;
+
+                // eDPI Zone Badge
+                const badgeEl = document.getElementById('out-edpi-badge');
+                if (cs2Edpi < 550) {
+                    badgeEl.textContent = 'Very Low (Arm Aim)';
+                    badgeEl.className = 'text-[11px] text-amber-400 font-medium';
+                } else if (cs2Edpi <= 1100) {
+                    badgeEl.textContent = 'Balanced Pro Zone';
+                    badgeEl.className = 'text-[11px] text-cyan-400 font-medium';
+                } else if (cs2Edpi <= 1600) {
+                    badgeEl.textContent = 'High (Hybrid Aim)';
+                    badgeEl.className = 'text-[11px] text-amber-400 font-medium';
+                } else {
+                    badgeEl.textContent = 'Very High (Wrist Aim)';
+                    badgeEl.className = 'text-[11px] text-orange-400 font-medium';
+                }
+
+                // Render All-Games Equivalent Matrix
+                const grid = document.getElementById('all-games-grid');
+                grid.innerHTML = Object.entries(GAME_YAW).map(([key, info]) => {
+                    const val = (inputSens * fromYaw) / info.yaw;
+                    const highlight = key === toKey ? 'border-amber-500/60 bg-amber-500/10' : 'border-esports-border bg-esports-card';
+                    return `
+                        <div class="rounded-xl border ${highlight} p-2.5">
+                            <div class="text-[10px] text-slate-400 truncate">${info.name}</div>
+                            <div class="font-mono text-sm font-bold text-white mt-0.5">${val.toFixed(info.decimals)}</div>
+                        </div>
+                    `;
+                }).join('');
+
+                updateAutoexec();
+            } catch (err) {
+                console.error('Sensitivity calculation error:', err);
+            }
+        }
+
+        /* =====================================================================
+           TOOL 2: VIEWMODEL GENERATOR LOGIC
+           ===================================================================== */
+        function applyViewmodelPreset(presetKey) {
+            const p = VIEWMODEL_PRESETS[presetKey];
+            if (!p) return;
+
+            document.getElementById('vm-fov').value = p.fov;
+            document.getElementById('vm-x').value = p.x;
+            document.getElementById('vm-y').value = p.y;
+            document.getElementById('vm-z').value = p.z;
+            document.getElementById('vm-presetpos').value = p.presetpos;
+            document.getElementById('vm-active-tag').textContent = `Preset: ${p.label}`;
+
+            document.querySelectorAll('.vm-preset-btn').forEach(btn => {
+                if (btn.dataset.preset === presetKey) {
+                    btn.classList.add('bg-amber-500', 'text-slate-950', 'border-amber-500');
+                    btn.classList.remove('bg-esports-elevated');
+                } else {
+                    btn.classList.remove('bg-amber-500', 'text-slate-950', 'border-amber-500');
+                    btn.classList.add('bg-esports-elevated');
+                }
+            });
+
+            updateViewmodel(false);
+            showToast(`Loaded ${p.label} viewmodel!`);
+        }
+
+        function updateViewmodel(markCustom = true) {
+            try {
+                const fov = parseFloat(document.getElementById('vm-fov').value);
+                const x = parseFloat(document.getElementById('vm-x').value);
+                const y = parseFloat(document.getElementById('vm-y').value);
+                const z = parseFloat(document.getElementById('vm-z').value);
+                const presetpos = parseInt(document.getElementById('vm-presetpos').value, 10);
+
+                appState.viewmodel = { fov, x, y, z, presetpos };
+
+                document.getElementById('val-vm-fov').textContent = fov;
+                document.getElementById('val-vm-x').textContent = x.toFixed(1);
+                document.getElementById('val-vm-y').textContent = y.toFixed(1);
+                document.getElementById('val-vm-z').textContent = z.toFixed(1);
+
+                if (markCustom) {
+                    document.getElementById('vm-active-tag').textContent = 'Custom Viewmodel';
+                }
+
+                // Shift visual rifle schematic proportionally
+                const rifleBox = document.getElementById('vm-rifle-box');
+                if (rifleBox) {
+                    const tx = (x - 1.5) * 14;
+                    const ty = -(z + 1.0) * 12;
+                    const scale = 1 - (fov - 60) * 0.015 - y * 0.04;
+                    rifleBox.style.transform = `translate(${tx}px, ${ty}px) scale(${scale.toFixed(3)})`;
+                }
+
+                const cmd = `viewmodel_presetpos ${presetpos}; viewmodel_fov ${fov}; viewmodel_offset_x ${x.toFixed(1)}; viewmodel_offset_y ${y.toFixed(1)}; viewmodel_offset_z ${z.toFixed(1)};`;
+                document.getElementById('vm-output').value = cmd;
+
+                updateAutoexec();
+            } catch (err) {
+                console.error('Viewmodel update error:', err);
+            }
+        }
+
+        /* =====================================================================
+           TOOL 3: LIVE CROSSHAIR PREVIEW & GENERATOR LOGIC
+           ===================================================================== */
+        function hexToRgb(hex) {
+            const clean = hex.replace('#', '');
+            return {
+                r: parseInt(clean.substring(0, 2), 16) || 0,
+                g: parseInt(clean.substring(2, 4), 16) || 255,
+                b: parseInt(clean.substring(4, 6), 16) || 0
+            };
+        }
+
+        function setCrosshairColor(hex) {
+            document.getElementById('ch-color').value = hex;
+            updateCrosshair();
+        }
+
+        function setCrosshairBg(mode) {
+            appState.crosshair.bg = mode;
+            document.querySelectorAll('.bg-switch-btn').forEach(btn => {
+                btn.classList.remove('bg-amber-500', 'text-slate-950');
+                btn.classList.add('text-slate-400', 'hover:text-white');
+            });
+            const active = document.getElementById(`bg-btn-${mode}`);
+            if (active) {
+                active.classList.remove('text-slate-400', 'hover:text-white');
+                active.classList.add('bg-amber-500', 'text-slate-950');
+            }
+            drawCrosshairCanvas();
+        }
+
+        function applyCrosshairPreset(key) {
+            const p = CROSSHAIR_PRESETS[key];
+            if (!p) return;
+            document.getElementById('ch-size').value = p.size;
+            document.getElementById('ch-thickness').value = p.thickness;
+            document.getElementById('ch-gap').value = p.gap;
+            document.getElementById('ch-alpha').value = p.alpha;
+            document.getElementById('ch-color').value = p.color;
+            document.getElementById('ch-outline').checked = p.outline;
+            document.getElementById('ch-dot').checked = p.dot;
+            document.getElementById('ch-tstyle').checked = p.tstyle;
+            updateCrosshair();
+            showToast(`Loaded ${key} crosshair preset!`);
+        }
+
+        function updateCrosshair() {
+            try {
+                const ch = appState.crosshair;
+                ch.size = parseFloat(document.getElementById('ch-size').value);
+                ch.thickness = parseFloat(document.getElementById('ch-thickness').value);
+                ch.gap = parseFloat(document.getElementById('ch-gap').value);
+                ch.alpha = parseInt(document.getElementById('ch-alpha').value, 10);
+                ch.color = document.getElementById('ch-color').value;
+                ch.outline = document.getElementById('ch-outline').checked;
+                ch.dot = document.getElementById('ch-dot').checked;
+                ch.tstyle = document.getElementById('ch-tstyle').checked;
+
+                document.getElementById('val-ch-size').textContent = ch.size.toFixed(1);
+                document.getElementById('val-ch-thickness').textContent = ch.thickness.toFixed(1);
+                document.getElementById('val-ch-gap').textContent = ch.gap.toFixed(1);
+                document.getElementById('val-ch-alpha').textContent = ch.alpha;
+
+                const rgb = hexToRgb(ch.color);
+                const cmd = [
+                    `cl_crosshairstyle 4`,
+                    `cl_crosshairsize ${ch.size}`,
+                    `cl_crosshairthickness ${ch.thickness}`,
+                    `cl_crosshairgap ${ch.gap}`,
+                    `cl_crosshair_drawoutline ${ch.outline ? 1 : 0}`,
+                    `cl_crosshair_outlinethickness 1`,
+                    `cl_crosshairdot ${ch.dot ? 1 : 0}`,
+                    `cl_crosshair_t ${ch.tstyle ? 1 : 0}`,
+                    `cl_crosshairusealpha 1`,
+                    `cl_crosshairalpha ${ch.alpha}`,
+                    `cl_crosshaircolor 5`,
+                    `cl_crosshaircolor_r ${rgb.r}`,
+                    `cl_crosshaircolor_g ${rgb.g}`,
+                    `cl_crosshaircolor_b ${rgb.b}`
+                ].join('; ') + ';';
+
+                document.getElementById('ch-output').value = cmd;
+
+                drawCrosshairCanvas();
+                updateAutoexec();
+            } catch (err) {
+                console.error('Crosshair update error:', err);
+            }
+        }
+
+        function resizeAndDrawCrosshair() {
+            try {
+                const wrapper = document.getElementById('crosshair-canvas-wrapper');
+                const canvas = document.getElementById('crosshair-canvas');
+                if (!wrapper || !canvas) return;
+
+                const rect = wrapper.getBoundingClientRect();
+                if (rect.width === 0 || rect.height === 0) return;
+
+                const dpr = window.devicePixelRatio || 1;
+                canvas.width = Math.floor(rect.width * dpr);
+                canvas.height = Math.floor(rect.height * dpr);
+
+                const ctx = canvas.getContext('2d');
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+                drawCrosshairCanvas();
+            } catch (err) {
+                console.error('Canvas resize error:', err);
+            }
+        }
+
+        function drawCrosshairCanvas() {
+            try {
+                const canvas = document.getElementById('crosshair-canvas');
+                const wrapper = document.getElementById('crosshair-canvas-wrapper');
+                if (!canvas || !wrapper) return;
+
+                const rect = wrapper.getBoundingClientRect();
+                const w = rect.width;
+                const h = rect.height;
+                if (w === 0 || h === 0) return;
+
+                const ctx = canvas.getContext('2d');
+                const ch = appState.crosshair;
+
+                // 1. Draw Selected Background Scene
+                if (ch.bg === 'dust2') {
+                    // Warm Dust2 Long A wall & sky gradient
+                    const skyGrad = ctx.createLinearGradient(0, 0, 0, h);
+                    skyGrad.addColorStop(0, '#c8b698');
+                    skyGrad.addColorStop(0.42, '#d8c29d');
+                    skyGrad.addColorStop(0.421, '#b89668');
+                    skyGrad.addColorStop(1, '#9c7b50');
+                    ctx.fillStyle = skyGrad;
+                    ctx.fillRect(0, 0, w, h);
+
+                    // Subtle architectural Dust2 doorway silhouette
+                    ctx.fillStyle = 'rgba(72, 52, 30, 0.25)';
+                    ctx.fillRect(w * 0.12, h * 0.28, w * 0.18, h * 0.72);
+                    ctx.fillStyle = 'rgba(255, 240, 210, 0.18)';
+                    ctx.fillRect(w * 0.65, h * 0.22, w * 0.25, h * 0.78);
+                } else if (ch.bg === 'dark') {
+                    const darkGrad = ctx.createRadialGradient(w / 2, h / 2, 10, w / 2, h / 2, w * 0.7);
+                    darkGrad.addColorStop(0, '#1e2636');
+                    darkGrad.addColorStop(1, '#0b0e14');
+                    ctx.fillStyle = darkGrad;
+                    ctx.fillRect(0, 0, w, h);
+
+                    // Subtle dark grid
+                    ctx.strokeStyle = 'rgba(255,255,255,0.04)';
+                    ctx.lineWidth = 1;
+                    for (let gx = 0; gx < w; gx += 24) {
+                        ctx.beginPath(); ctx.moveTo(gx, 0); ctx.lineTo(gx, h); ctx.stroke();
+                    }
+                    for (let gy = 0; gy < h; gy += 24) {
+                        ctx.beginPath(); ctx.moveTo(0, gy); ctx.lineTo(w, gy); ctx.stroke();
+                    }
+                } else {
+                    const lightGrad = ctx.createLinearGradient(0, 0, 0, h);
+                    lightGrad.addColorStop(0, '#f1f5f9');
+                    lightGrad.addColorStop(1, '#cbd5e1');
+                    ctx.fillStyle = lightGrad;
+                    ctx.fillRect(0, 0, w, h);
+                }
+
+                // 2. Draw Crosshair Geometry at Exact Center
+                const cx = Math.round(w / 2);
+                const cy = Math.round(h / 2);
+                const scale = 3.2; // Visual clarity multiplier matching 1080p feel
+                const len = Math.max(0, ch.size * scale);
+                const thick = Math.max(1, ch.thickness * 2.2);
+                const gap = (ch.gap + 4.5) * 1.8;
+
+                const rgb = hexToRgb(ch.color);
+                const fillColor = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${(ch.alpha / 255).toFixed(2)})`;
+                const outlineColor = `rgba(0, 0, 0, ${(ch.alpha / 255).toFixed(2)})`;
+
+                const drawBar = (x, y, bw, bh) => {
+                    if (ch.outline) {
+                        ctx.fillStyle = outlineColor;
+                        ctx.fillRect(x - 1, y - 1, bw + 2, bh + 2);
+                    }
+                    ctx.fillStyle = fillColor;
+                    ctx.fillRect(x, y, bw, bh);
+                };
+
+                if (len > 0) {
+                    // Left bar
+                    drawBar(cx - gap - len, cy - thick / 2, len, thick);
+                    // Right bar
+                    drawBar(cx + gap, cy - thick / 2, len, thick);
+                    // Bottom bar
+                    drawBar(cx - thick / 2, cy + gap, thick, len);
+                    // Top bar (omitted if T-Style enabled)
+                    if (!ch.tstyle) {
+                        drawBar(cx - thick / 2, cy - gap - len, thick, len);
+                    }
+                }
+
+                // Center Dot
+                if (ch.dot) {
+                    drawBar(cx - thick / 2, cy - thick / 2, thick, thick);
+                }
+            } catch (err) {
+                console.error('Crosshair draw error:', err);
+            }
+        }
+
+        /* =====================================================================
+           TOOL 4: AUTOEXEC.CFG GENERATOR & FILE DOWNLOADER
+           ===================================================================== */
+        function updateAutoexec() {
+            try {
+                const vm = appState.viewmodel;
+                const ch = appState.crosshair;
+                const rgb = hexToRgb(ch.color);
+
+                const incFps = document.getElementById('cfg-fps').checked;
+                const incTel = document.getElementById('cfg-telemetry').checked;
+                const incRadar = document.getElementById('cfg-radar').checked;
+                const incJump = document.getElementById('cfg-jumpthrow').checked;
+                const incAudio = document.getElementById('cfg-audio').checked;
+
+                const lines = [
+                    `// ========================================================`,
+                    `// CS2 Pro Autoexec.cfg — Generated by CS2 Pro Config Hub`,
+                    `// ========================================================`,
+                    ``,
+                    `// --- Mouse & Sensitivity (${appState.dpi} DPI | ${Math.round(appState.dpi * appState.cs2Sens)} eDPI) ---`,
+                    `sensitivity "${appState.cs2Sens.toFixed(4)}"`,
+                    `zoom_sensitivity_ratio "1.0"`,
+                    ``,
+                    `// --- Viewmodel Settings ---`,
+                    `viewmodel_presetpos "${vm.presetpos}"`,
+                    `viewmodel_fov "${vm.fov}"`,
+                    `viewmodel_offset_x "${vm.x.toFixed(1)}"`,
+                    `viewmodel_offset_y "${vm.y.toFixed(1)}"`,
+                    `viewmodel_offset_z "${vm.z.toFixed(1)}"`,
+                    ``,
+                    `// --- Crosshair Settings ---`,
+                    `cl_crosshairstyle "4"`,
+                    `cl_crosshairsize "${ch.size}"`,
+                    `cl_crosshairthickness "${ch.thickness}"`,
+                    `cl_crosshairgap "${ch.gap}"`,
+                    `cl_crosshair_drawoutline "${ch.outline ? 1 : 0}"`,
+                    `cl_crosshair_outlinethickness "1"`,
+                    `cl_crosshairdot "${ch.dot ? 1 : 0}"`,
+                    `cl_crosshair_t "${ch.tstyle ? 1 : 0}"`,
+                    `cl_crosshairusealpha "1"`,
+                    `cl_crosshairalpha "${ch.alpha}"`,
+                    `cl_crosshaircolor "5"`,
+                    `cl_crosshaircolor_r "${rgb.r}"`,
+                    `cl_crosshaircolor_g "${rgb.g}"`,
+                    `cl_crosshaircolor_b "${rgb.b}"`
+                ];
+
+                if (incFps) {
+                    lines.push(
+                        ``,
+                        `// --- Performance & FPS ---`,
+                        `fps_max "0"`,
+                        `fps_max_ui "120"`,
+                        `engine_low_latency_sleep_after_client_tick "true"`
+                    );
+                }
+
+                if (incTel) {
+                    lines.push(
+                        ``,
+                        `// --- Telemetry / Net Graph ---`,
+                        `cl_hud_telemetry_frametime_show "2"`,
+                        `cl_hud_telemetry_ping_show "2"`,
+                        `cl_hud_telemetry_net_misdelivery_show "2"`
+                    );
+                }
+
+                if (incRadar) {
+                    lines.push(
+                        ``,
+                        `// --- Pro Radar Optimization ---`,
+                        `cl_radar_always_centered "0"`,
+                        `cl_radar_scale "0.4"`,
+                        `cl_hud_radar_scale "1.15"`,
+                        `cl_radar_icon_scale_min "0.7"`,
+                        `cl_radar_rotate "1"`
+                    );
+                }
+
+                if (incJump) {
+                    lines.push(
+                        ``,
+                        `// --- Movement & Nade Lineup Binds ---`,
+                        `bind "mwheeldown" "+jump"`,
+                        `bind "space" "+jump"`,
+                        `bind "v" "toggle cl_crosshairsize ${ch.size} 1000"`
+                    );
+                }
+
+                if (incAudio) {
+                    lines.push(
+                        ``,
+                        `// --- Competitive Audio ---`,
+                        `snd_headphone_eq "1"`,
+                        `snd_menumusic_volume "0"`,
+                        `snd_roundstart_volume "0"`,
+                        `snd_roundend_volume "0"`,
+                        `snd_tensecondwarning_volume "0.25"`
+                    );
+                }
+
+                lines.push(
+                    ``,
+                    `// --- Save Config ---`,
+                    `host_writeconfig`,
+                    `echo ">>> CS2 Pro Autoexec Loaded Successfully! <<<"`
+                );
+
+                document.getElementById('autoexec-preview').value = lines.join('\n');
+            } catch (err) {
+                console.error('Autoexec generation error:', err);
+            }
+        }
+
+        function downloadAutoexec() {
+            try {
+                updateAutoexec();
+                const content = document.getElementById('autoexec-preview').value;
+                const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'autoexec.cfg';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                showToast('Downloaded autoexec.cfg!');
+            } catch (err) {
+                console.error('Download failed:', err);
+                showToast('Download failed. Use Copy All instead.', 'error');
+            }
+        }
+
+        /* =====================================================================
+           FAQ ACCORDION
+           ===================================================================== */
+        function toggleFaq(button) {
+            const item = button.closest('.faq-item');
+            const content = item.querySelector('.faq-content');
+            const chevron = item.querySelector('.faq-chevron');
+            const isHidden = content.classList.contains('hidden');
+
+            content.classList.toggle('hidden');
+            chevron.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+
+        /* =====================================================================
+           INITIALIZATION & EVENT LISTENERS
+           ===================================================================== */
+        window.addEventListener('DOMContentLoaded', () => {
+            // Sensitivity listeners
+            ['sens-from-game', 'sens-to-game', 'sens-dpi', 'sens-value'].forEach(id => {
+                document.getElementById(id).addEventListener('input', updateSensitivity);
+            });
+
+            // Viewmodel listeners
+            ['vm-fov', 'vm-x', 'vm-y', 'vm-z', 'vm-presetpos'].forEach(id => {
+                document.getElementById(id).addEventListener('input', () => updateViewmodel(true));
+            });
+
+            // Crosshair listeners
+            ['ch-size', 'ch-thickness', 'ch-gap', 'ch-alpha', 'ch-color', 'ch-outline', 'ch-dot', 'ch-tstyle'].forEach(id => {
+                document.getElementById(id).addEventListener('input', updateCrosshair);
+                document.getElementById(id).addEventListener('change', updateCrosshair);
+            });
+
+            // Autoexec module toggles
+            ['cfg-fps', 'cfg-telemetry', 'cfg-radar', 'cfg-jumpthrow', 'cfg-audio'].forEach(id => {
+                document.getElementById(id).addEventListener('change', updateAutoexec);
+            });
+
+            // Responsive Canvas Resize Listener
+            window.addEventListener('resize', () => {
+                if (appState.activeTab === 'crosshair') {
+                    resizeAndDrawCrosshair();
+                }
+            });
+
+            // Initial renders
+            switchTab('sens');
+            updateSensitivity();
+            updateViewmodel(false);
+            setCrosshairBg('dust2');
+            updateCrosshair();
+            updateAutoexec();
+        });
+    </script>
+</body>
+</html>
